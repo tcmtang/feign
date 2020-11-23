@@ -266,6 +266,8 @@ public final class Types {
         }
         return original;
 
+      }else if(toResolve!=null &&  toResolve.toString().equals("void")){
+        return String.class;
       } else {
         return toResolve;
       }
