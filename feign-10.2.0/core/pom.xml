@@ -24,9 +24,9 @@
   </parent>
 
   <artifactId>feign-core</artifactId>
+  <version>10.2.0.1</version>
   <name>Feign Core</name>
   <description>Feign Core</description>
-  <version>10.2.0.1</version>
 
   <properties>
     <main.basedir>${project.basedir}/..</main.basedir>
