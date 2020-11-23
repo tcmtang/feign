@@ -266,7 +266,12 @@ final class Types {
         }
         return original;
 
-      } else {
+      }else if(toResolve!=null &&  toResolve.toString().equals("void")){//(toResolve!=null && Void.class.isAssignableFrom(toResolve.getClass())){
+          //toResolve=String.class;
+          return String.class;
+         // return String.class;
+      }
+      else {
         return toResolve;
       }
     }

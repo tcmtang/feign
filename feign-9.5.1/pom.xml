@@ -94,11 +94,24 @@
     </developer>
   </developers>
 
+  <pluginRepositories>
+    <pluginRepository>
+      <id>central</id>
+      <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+    </pluginRepository>
+  </pluginRepositories>
+
   <distributionManagement>
     <repository>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+      <layout>default</layout>
+    </repository>
+    <!--<repository>
       <id>bintray</id>
       <url>https://api.bintray.com/maven/openfeign/maven/feign/;publish=1</url>
-    </repository>
+    </repository>-->
     <snapshotRepository>
       <id>jfrog-snapshots</id>
       <url>http://oss.jfrog.org/artifactory/oss-snapshot-local</url>
@@ -361,6 +374,14 @@
   <profiles>
     <profile>
       <id>release</id>
+      <!-- 部署配置 -->
+      <distributionManagement>
+        <repository>
+          <id>mmg-releases</id>
+          <name>mmg Release Repository</name>
+          <url>http://api.mamagao.cn:8081/repository/maven-releases/</url>
+        </repository>
+      </distributionManagement>
       <build>
         <plugins>
           <!-- Creates source jar -->
